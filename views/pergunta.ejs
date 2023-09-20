@@ -1,0 +1,42 @@
+
+
+<%- include('partials/header') %>
+<body>
+  <%- include('partials/navbar') %>
+
+  <div class="container">
+
+    <hr>
+    <h1><%= pergunta.titulo %></h1>
+    <h3>Descrição:</h3>
+    <p><%= pergunta.descricao %></p>
+    <h3>Data:</h3>
+    <p><%= pergunta.calend %></p>
+    <h3>Quantidade de Pessoas:</h3>
+    <p><%= pergunta.QuantidadePessoas %></p>
+    <h3>Local:</h3>
+    <p><%= pergunta.Local %></p>
+    <hr>
+    <form  method="POST" action="/responder">
+        <h3>Cadastrar receita</h3>
+        <label > Resposta: </label>
+        <textarea name="corpo" placeholder="Deixe seu comentario" class="form-control"></textarea><br>
+        <input type="hidden" name="perguntaId" value="<%= pergunta.id%>">
+        <button type="submit" class="btn btn-primary">Responder</button>
+    </form>
+    <hr>
+    <h3>Respostas</h3>
+    <hr>
+    <% respostas.forEach(resposta =>{%>
+        <br>
+        <div class="card">
+            <div class="card-bory">
+                <p> <%= resposta.corpo%></p>
+            </div>
+        </div>
+
+    <% })%>
+  </div>
+</body>
+<%- include('partials/footer') %>
+   

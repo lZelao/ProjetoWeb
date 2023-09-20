@@ -1,0 +1,32 @@
+<%- include('partials/header') %>
+<body>
+    <%- include('partials/navbar') %>
+<div class= "container">
+    <div class="card">
+     <div class="card-header">
+       <h3>Tipo de receita... exemplo, jantar,almoço ou lanche...</h3>
+
+     </div>
+     <div class="card-body">
+       <form method="POST" action="/salvarperguntas">
+         <label>Titulo</label>
+         <input type="text" placeholder="Titulo" class="form-control" name="titulo">
+         <br>
+         <label > Descrição</label>
+         <textarea placeholder="coloque sua receita aqui" class="form-control" name="descricao"></textarea> 
+         <label > Data </label>
+         <textarea placeholder="Numero de Pessoas" class="form-control" name="calend"></textarea> 
+         <br>
+        
+         <label > Serve quantas pessoas</label>
+         <textarea placeholder="Numero de Pessoas" class="form-control" name="QuantidadePessoas"></textarea> 
+         <br>
+         <label > Local de origem da receita</label>
+         <textarea placeholder="Estado/Cidade" class="form-control " name="Local"></textarea> 
+         <br>
+
+         <button class="btn btn-success ">Enviar</button>
+       </form>
+     </div>  
+    </body>
+    <%- include('partials/footer') %>
